@@ -16,7 +16,7 @@ export class ToDoModel implements IToDoModel {
 	}
 
 	get items() {//возвращаем хранящийся массив
-		return this.items
+		return this._items
 	}
 
 	addItem(data: string) {
@@ -27,7 +27,10 @@ export class ToDoModel implements IToDoModel {
 	};
 
 	removeItem(id: string) {
-		this._items = this._items.filter(item => item.id != id)//оставляем все нужные элементы, убирая нужный айди
+		this._items = this._items.filter(item => item.id !== id)//оставляем все нужные элементы, убирая нужный айди
 	};
 
+	getItem(id: string) {
+		return this._items.find(item => item.id === id)
+	};
 }

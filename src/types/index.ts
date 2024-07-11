@@ -7,4 +7,5 @@ export interface IToDoModel {
 	items: IItem[];
 	addItem: (data: string) => IItem; //если мы хотим добавить элемент обязательно нужно добавить его имя, что и делаем (возвращает объект)
 	removeItem: (id: string) => void; // если мы хотим удалять элемент передаем в метод его Айди (метод ничего не возвращает)
+	getItem: (id: string) => IItem;
 }
